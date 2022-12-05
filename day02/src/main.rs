@@ -1,19 +1,6 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-//use std::vec::Vec;
 
-// A = Rock, B = Paper, C = Scissors
-// X = Rock, Y = Paper, Z = Scissors
-//
-// Scoring:
-// Rock = 1, Paper = 2, Scissors = 3
-// 0 = lost, 3 = draw, 6 = win
-//
-// Rules:
-// Rock Defeats Scissors
-// Scissors Defeat Paper
-// Paper Defeats Rock
-// Same shape = draw
 fn evaluate_game_2(op: &str, my: &str) -> i32 {
     match op {
         "A" => {
@@ -42,9 +29,6 @@ fn evaluate_game_2(op: &str, my: &str) -> i32 {
         _ => 0,
     }    
 }
-
-
-
 
 fn evaluate_game(op: &str, my: &str) -> i32 {
     match op {
@@ -75,7 +59,6 @@ fn evaluate_game(op: &str, my: &str) -> i32 {
     }    
 }
 
-
 fn main() {
     println!("Advent of code 2021, day 2!");
 
@@ -98,15 +81,9 @@ fn main() {
               
         sum_1 += result_1;
         sum_2 += result_2;
-
-        //println!("sum 1: {}", sum_1);
-        //println!("sum 2: {}", sum_2);
     }
 
     println!("final sum 1: {}", sum_1);
     println!("final sum 2: {}", sum_2);
-    
-
-
 
 }
