@@ -8,11 +8,11 @@ fn main() {
     println!("Advent of code 2021, day 5!");
     let mut configuration: Vec<Vec<char>> = Vec::new();
     let nbr = 9;
+    let filename = "rsc/input.txt";
     for _ in 0..nbr {
           configuration.push(vec![]);
     }
 
-    let filename = "rsc/input.txt";
     let file = File::open(filename).unwrap();
     let reader = BufReader::new(file);
     let mut reversed = false;
@@ -43,12 +43,21 @@ fn main() {
             
             // apply moves 
             let nbr_of_ops: usize = vec[0].parse().unwrap();
+            let mut stack: Vec<char> = vec![];
+            let src: usize = vec[1].parse().unwrap();
+            let dst: usize = vec[2].parse().unwrap(); 
             for n in 0..nbr_of_ops {
-                let src: usize = vec[1].parse().unwrap();
-                let dst: usize = vec[2].parse().unwrap();
-                let pop = configuration[src-1].pop();
-                configuration[dst-1].push(pop.unwrap());
-             }
+                let elem: Option<char> = configuration[src-1].pop();
+                stack.push(elem.unwrap());
+                //let dst: usize = vec[2].parse().unwrap();
+                //let pop = configuration[src-1].pop();
+                //configuration[dst-1].push(pop.unwrap());
+            }
+            stack.reverse();
+            for m in 0..nbr_of_ops {
+                configuration[dst-1].push(stack[m]);
+            }
+
              println!("altered config: {:?}", configuration);
         }else if line.contains("["){
             // write stacks
