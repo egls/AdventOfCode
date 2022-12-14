@@ -53,8 +53,8 @@ fn main() {
 
         if ls_enabled {
             if line.contains("dir") {
-                let mut split = line.split(" ").collect::<Vec<&str>>();
-                let mut new_node = Node {
+                let split: Vec<&str> = line.split(" ").collect();
+                let new_node = Node {
                     name: split[1].to_string(),
                     children: vec![],
                     files: vec![],
