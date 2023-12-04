@@ -1,0 +1,18 @@
+        //let win_nbrs: Vec<i32> = win_data.trim_start()
+        //    .split_whitespace()
+        //    .map(|s| s.parse().expect("parse error"))
+        //    .collect();
+
+        //let game_nbrs: Vec<i32> = game_data.trim_start()
+        //    .split_whitespace()
+        //    .map(|s| s.parse().expect("parse error"))
+        //    .collect();
+
+        //for nbr in win_nbrs {
+         
+        //    if game_nbrs.contains(&nbr) {
+        //        println!("nbr: {}", nbr);
+        //        counter += 1;
+        ////    }
+        //    println!("nbr: {}", nbr);
+        //}
